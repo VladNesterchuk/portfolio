@@ -1,7 +1,4 @@
-/**
- * Project data for the portfolio.
- * Add project images under /public/images/projects/{slug}/ (cover.jpg, 1.jpg, long-1.jpg, etc.).
- */
+const BASE = import.meta.env.BASE_URL
 
 export interface Project {
   slug: string
@@ -30,16 +27,16 @@ export const projects: Project[] = [
       The interface dynamically updates without page reloads, demonstrating state management, conditional rendering, and component-based architecture.This project was created as a frontend-focused application to practice working with React, component communication, and UI logic similar to real-world admin dashboards.`,
     ],
     tech: ['React', 'JavaScript', 'CSS'],
-    cover: '/images/projects/user-management-app/cover.png',
+    cover: `${BASE}images/projects/user-management-app/cover.png`,
     gallery: [
-      { src: '/images/projects/user-management-app/8.png', alt: 'Login page', kind: 'normal' },
-      { src: '/images/projects/user-management-app/1.png', alt: 'Login page', kind: 'normal' },
-      { src: '/images/projects/user-management-app/2.png', alt: 'Login page', kind: 'normal' },
-      { src: '/images/projects/user-management-app/3.png', alt: 'Login page', kind: 'normal' },
-      { src: '/images/projects/user-management-app/4.png', alt: 'Login page', kind: 'long' },
-      { src: '/images/projects/user-management-app/5.png', alt: 'Login page', kind: 'normal' },
-      { src: '/images/projects/user-management-app/6.png', alt: 'Login page', kind: 'normal' },
-      { src: '/images/projects/user-management-app/7.png', alt: 'Login page', kind: 'normal' },
+      { src: `${BASE}images/projects/user-management-app/8.png`, alt: 'Login page', kind: 'normal' },
+      { src: `${BASE}images/projects/user-management-app/1.png`, alt: 'Login page', kind: 'normal' },
+      { src: `${BASE}images/projects/user-management-app/2.png`, alt: 'Login page', kind: 'normal' },
+      { src: `${BASE}images/projects/user-management-app/3.png`, alt: 'Login page', kind: 'normal' },
+      { src: `${BASE}images/projects/user-management-app/4.png`, alt: 'Login page', kind: 'long' },
+      { src: `${BASE}images/projects/user-management-app/5.png`, alt: 'Login page', kind: 'normal' },
+      { src: `${BASE}images/projects/user-management-app/6.png`, alt: 'Login page', kind: 'normal' },
+      { src: `${BASE}images/projects/user-management-app/7.png`, alt: 'Login page', kind: 'normal' },
     ],
   },
   {
@@ -56,13 +53,13 @@ export const projects: Project[] = [
       The website is fully responsive and adapted for desktop, tablet, and mobile devices to ensure a consistent user experience across different screen sizes.`,
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'PHP'],
-    cover: '/images/projects/yourmeal-e-commerce-website/cover.png',
+    cover: `${BASE}images/projects/yourmeal-e-commerce-website/cover.png`,
     gallery: [
-      { src: '/images/projects/yourmeal-e-commerce-website/1.png', alt: 'Homepage', kind: 'long' },
-      { src: '/images/projects/yourmeal-e-commerce-website/2.png', alt: 'Product list', kind: 'long' },
-      { src: '/images/projects/yourmeal-e-commerce-website/3.png', alt: 'Product list', kind: 'normal' },
-      { src: '/images/projects/yourmeal-e-commerce-website/4.png', alt: 'Product list', kind: 'normal' },
-      { src: '/images/projects/yourmeal-e-commerce-website/5.png', alt: 'Product list', kind: 'normal' },
+      { src: `${BASE}images/projects/yourmeal-e-commerce-website/1.png`, alt: 'Homepage', kind: 'long' },
+      { src: `${BASE}images/projects/yourmeal-e-commerce-website/2.png`, alt: 'Product list', kind: 'long' },
+      { src: `${BASE}images/projects/yourmeal-e-commerce-website/3.png`, alt: 'Product list', kind: 'normal' },
+      { src: `${BASE}images/projects/yourmeal-e-commerce-website/4.png`, alt: 'Product list', kind: 'normal' },
+      { src: `${BASE}images/projects/yourmeal-e-commerce-website/5.png`, alt: 'Product list', kind: 'normal' },
     ],
   },
   {
@@ -76,13 +73,13 @@ export const projects: Project[] = [
       'Features: custom layout created with Elementor, responsive design, and full adaptation for desktop, tablet, and mobile devices.',
     ],
     tech: ['WordPress', 'PHP',],
-    cover: '/images/projects/family-smile-wordpress-landing/cover.png',
+    cover: `${BASE}images/projects/family-smile-wordpress-landing/cover.png`,
     gallery: [
-      { src: '/images/projects/family-smile-wordpress-landing/5.png', alt: 'Landing above the fold', kind: 'normal' },
-      { src: '/images/projects/family-smile-wordpress-landing/1.png', alt: 'Landing above the fold', kind: 'long' },
-      { src: '/images/projects/family-smile-wordpress-landing/2.png', alt: 'Landing above the fold', kind: 'long' },
-      { src: '/images/projects/family-smile-wordpress-landing/3.png', alt: 'Landing above the fold', kind: 'long' },
-      { src: '/images/projects/family-smile-wordpress-landing/4.png', alt: 'Landing above the fold', kind: 'long' },   
+      { src: `${BASE}images/projects/family-smile-wordpress-landing/5.png`, alt: 'Landing above the fold', kind: 'normal' },
+      { src: `${BASE}images/projects/family-smile-wordpress-landing/1.png`, alt: 'Landing above the fold', kind: 'long' },
+      { src: `${BASE}images/projects/family-smile-wordpress-landing/2.png`, alt: 'Landing above the fold', kind: 'long' },
+      { src: `${BASE}images/projects/family-smile-wordpress-landing/3.png`, alt: 'Landing above the fold', kind: 'long' },
+      { src: `${BASE}images/projects/family-smile-wordpress-landing/4.png`, alt: 'Landing above the fold', kind: 'long' },   
     ],
   },
 ]
