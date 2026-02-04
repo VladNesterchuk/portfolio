@@ -4,9 +4,11 @@ import { Link, NavLink } from 'react-router-dom'
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
+  const BASE = import.meta.env.BASE_URL
+
   const navLinks: { to: string; label: string; external?: boolean }[] = [
-    { to: '/', label: 'Home' },
-    { to: '/#projects', label: 'Projects', external: true },
+    { to: BASE, label: 'Home' },
+    { to: `${BASE}#projects`, label: 'Projects', external: true },
   ]
 
   return (
