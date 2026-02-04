@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { projects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
 
+const BASE = import.meta.env.BASE_URL
 const SKILLS_FRONTEND = ['HTML', 'CSS', 'JavaScript', 'React' , 'PHP']
 const SKILLS_TOOLS = ['WordPress', 'Adobe Photoshop', 'Figma']
 
@@ -39,7 +40,7 @@ export default function Home() {
         </p>
         
         <a
-          href="/Vladyslav%20Nesterchuk%20CV.pdf"
+          href={`${BASE}Vladyslav%20Nesterchuk%20CV.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-4 py-2.5 

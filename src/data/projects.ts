@@ -21,6 +21,7 @@ export const projects: Project[] = [
     type: 'Frontend Web Application (SPA)',
     role: 'Front-end Developer',
     githubUrl: 'https://github.com/VladNesterchuk/User-Management-App',
+    siteUrl: 'https://vladnesterchuk.github.io/User-Management-App/',
     description: [
       `A single-page React application designed for managing users through an admin interface.
       The application allows adding, editing, deleting, and viewing user profiles with a clean and intuitive UI.The project includes an admin authentication system, modal windows for user details, and persistent data storage using localStorage.
