@@ -1,18 +1,20 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
+import { HeaderMotion } from './HeaderMotion'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
-  const BASE = import.meta.env.BASE_URL
-
-  const navLinks: { to: string; label: string; external?: boolean }[] = [
-    { to: BASE, label: 'Home' },
-    { to: `${BASE}#projects`, label: 'Projects', external: true },
-  ]
+  const scrollToProjects = () => {
+    const el = document.getElementById('projects')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+    setOpen(false)
+  }
 
   return (
-    <nav className="sticky top-0 z-50 bg-cyber-bg/95 backdrop-blur border-b border-cyber-border shadow-[0_0_15px_rgba(34,211,238,0.08)]">
+    <HeaderMotion className="sticky top-0 z-50 bg-cyber-bg/95 backdrop-blur border-b border-cyber-border shadow-[0_0_15px_rgba(34,211,238,0.08)]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-14 md:h-16">
           <Link to="/" className="text-neon-cyan font-semibold text-lg tracking-wider hover:text-neon-teal focus:text-neon-teal  transition">
@@ -41,35 +43,22 @@ export default function Navbar() {
               open ? 'block' : 'hidden md:flex'
             }`}
           >
-            {navLinks.map(({ to, label, external }) =>
-              external ? (
-                <a
-                  key={to}
-                  href={to}
-                  onClick={() => setOpen(false)}
+
+                <button onClick={scrollToProjects}
                   className="block md:inline px-4 py-3 md:py-2 md:px-3 rounded-lg md:rounded-md text-slate-400 hover:text-neon-cyan focus:text-neon-cyan transition"
                 >
-                  {label}
-                </a>
-              ) : (
-                <NavLink
-                  key={to}
-                  to={to}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    `block md:inline px-4 py-3 md:py-2 md:px-3 rounded-lg md:rounded-md transition ${
-                      isActive ? 'text-neon-cyan font-medium' : 'text-slate-400 hover:text-neon-cyan focus:text-neon-cyan'
-                    }`
-                  }
-                  end={to === '/'}
+                  Projects
+                </button>
+
+                <Link to="/" onClick={() => setOpen(false)}
+                  className="block md:inline px-4 py-3 md:py-2 md:px-3 rounded-lg md:rounded-md text-slate-400 hover:text-neon-cyan focus:text-neon-cyan transition"
                 >
-                  {label}
-                </NavLink>
-              )
-            )}
+                  Home
+                </Link>
+
           </div>
         </div>
       </div>
-    </nav>
+    </HeaderMotion>
   )
 }

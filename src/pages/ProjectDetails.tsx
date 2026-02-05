@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { getProjectBySlug } from '../data/projects'
 import ProjectInfoPanel from '../components/ProjectInfoPanel'
 import GalleryCarousel from '../components/GalleryCarousel'
+import { Section } from '../components/Section'
 
 export default function ProjectDetails() {
   const { slug } = useParams<{ slug: string }>()
@@ -19,7 +20,7 @@ export default function ProjectDetails() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 md:py-14">
+    <Section className="max-w-6xl mx-auto px-4 py-10 md:py-14">
       <Link
         to="/#projects"
         className="inline-flex items-center gap-1 text-slate-400 hover:text-neon-cyan focus:text-neon-cyan mb-6 transition"
@@ -48,10 +49,10 @@ export default function ProjectDetails() {
         </div>
         </div>
 
-      <section>
+      <Section>
         <h2 className="text-xl font-semibold text-neon-fuchsia mb-4">Gallery</h2>
         <GalleryCarousel gallery={project.gallery} />
-      </section>
-    </div>
+      </Section>
+    </Section>
   )
 }

@@ -1,10 +1,13 @@
 import { useMemo, useState } from 'react'
 import { projects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
+import { Section } from '../components/Section'
+import { motion } from 'framer-motion'
+import { listVariants, itemVariants } from '../motion/animations'
 
 const BASE = import.meta.env.BASE_URL
-const SKILLS_FRONTEND = ['HTML', 'CSS', 'JavaScript', 'React' , 'PHP']
-const SKILLS_TOOLS = ['WordPress', 'Adobe Photoshop', 'Figma']
+const SKILLS_FRONTEND = ['HTML5', 'CSS3',  'Tailwind CSS' , 'JavaScript (ES6+)', 'React' , 'TypeScript (basic)',]
+const SKILLS_TOOLS = ['WordPress', 'Adobe Photoshop', 'Figma' , 'Git / GitHub',]
 
 const ALL_TECH = Array.from(new Set(projects.flatMap((p) => p.tech))).sort()
 
@@ -25,7 +28,7 @@ export default function Home() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 md:py-14">
       {/* About */}
-      <section className="mb-16 md:mb-20">
+      <Section id="about" className="mb-16 md:mb-20">
         <h1 className="text-3xl md:text-4xl font-bold text-neon-cyan mb-1 tracking-tight">
           Vladyslav Nesterchuk
         </h1>
@@ -56,10 +59,10 @@ export default function Home() {
           </svg>
           Download my CV
         </a>
-      </section>
+      </Section>
 
       {/* Skills */}
-      <section className="mb-16 md:mb-20">
+      <Section id="skills" className="mb-16 md:mb-20">
         <h2 className="text-xl font-semibold text-neon-fuchsia mb-4">
           Skills and technologies I use
         </h2>
@@ -91,10 +94,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Projects */}
-      <section id="projects" className="scroll-mt-20">
+      <Section id="projects">
         <h2 className="text-xl font-semibold text-neon-fuchsia mb-4">Projects</h2>
 
         {ALL_TECH.length > 0 && (
@@ -126,15 +129,22 @@ export default function Home() {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div
+        variants={listVariants}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+            <motion.div key={p.slug} variants={itemVariants}>
+              <ProjectCard project={p} />
+            </motion.div>
           ))}
-        </div>
+      </motion.div>
+
         {filtered.length === 0 && (
           <p className="text-cyber-muted py-8">No projects match the selected filters.</p>
         )}
-      </section>
+      </Section>
     </div>
   )
 }

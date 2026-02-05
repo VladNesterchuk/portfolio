@@ -1,4 +1,6 @@
 import type { Project } from '../data/projects'
+import { motion } from 'framer-motion'
+import { panelReveal } from '../motion/animations'
 
 interface ProjectInfoPanelProps {
   project: Project
@@ -6,7 +8,13 @@ interface ProjectInfoPanelProps {
 
 export default function ProjectInfoPanel({ project }: ProjectInfoPanelProps) {
   return (
-    <div className="rounded-xl border border-cyber-border bg-cyber-card/80 p-5 md:p-6">
+
+    <motion.div
+      variants={panelReveal}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: '-60px' }}
+      className="relative rounded-xl border border-cyber-border bg-cyber-card/80 p-5 md:p-6">
       <dl className="space-y-4">
         <div>
           <dt className="text-sm font-medium text-cyber-muted">Project type</dt>
@@ -57,6 +65,6 @@ export default function ProjectInfoPanel({ project }: ProjectInfoPanelProps) {
           </div>
         )}
       </dl>
-    </div>
+    </motion.div>
   )
 }

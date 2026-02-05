@@ -1,10 +1,10 @@
 import { FaTelegram, FaGithub } from "react-icons/fa";
 import { MdOutlineMail , MdPhone  } from "react-icons/md";
-
+import { FooterMotion } from "./FooterMotion";
 
 export default function Footer() {
     return(
-        <footer className='flex flex-col items-center gap-5 mt-3
+        <FooterMotion className='flex flex-col items-center gap-5 mt-3
                     bg-cyber-bg/95 backdrop-blur border-t border-cyber-border shadow-[0_0_15px_rgba(34,211,238,0.08)]'>
 
                 <h2 className='text-2xl font-semibold text-neon-fuchsia mt-5'>
@@ -100,6 +100,6 @@ export default function Footer() {
                 </div>
 
                 <p className="p-3 text-cyber-muted"> © 2025 Vlad Nesterchuk </p>
-        </footer>
+        </FooterMotion>
     )
 }
