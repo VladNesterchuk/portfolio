@@ -6,8 +6,9 @@ import { motion } from 'framer-motion'
 import { listVariants, itemVariants } from '../motion/animations'
 
 const BASE = import.meta.env.BASE_URL
-const SKILLS_FRONTEND = ['HTML5', 'CSS3',  'Tailwind CSS' , 'JavaScript (ES6+)', 'React' , 'TypeScript (basic)',]
-const SKILLS_TOOLS = ['WordPress', 'Adobe Photoshop', 'Figma' , 'Git / GitHub',]
+const SKILLS_FRONTEND = ['HTML5', 'CSS3',  'Tailwind CSS' , 'JavaScript (ES6+, DOM)', 'React' , 'TypeScript (basic)',]
+const SKILLS_BACKEND = ['PHP', 'MySQL', 'REST API', 'API Integration',]
+const SKILLS_TOOLS = ['WordPress', 'Adobe Photoshop', 'Figma' , 'Git / GitHub', 'Cursor AI']
 
 const ALL_TECH = Array.from(new Set(projects.flatMap((p) => p.tech))).sort()
 
@@ -36,10 +37,10 @@ export default function Home() {
           Front-end Developer
         </p>
         <p className="text-slate-400 max-w-2xl mb-6 leading-relaxed">
-        Motivated Front-End Developer with practical experience in building responsive websites and user
-        interfaces. Fast learner with a responsible attitude and strong communication skills. Able to work effectively
-        both independently and in a team-oriented environment.
-
+        Motivated Front-End Developer with practical experience in building responsive and high-performance web platforms. 
+        Skilled in JavaScript (ES6+), PHP, and modern UI development. Focused on SEO optimization, performance, and clean architecture. 
+        Fast learner with strong attention to detail and teamwork skills.
+        Seeking a challenging role where I can apply my skills and continue to grow as a developer.
         </p>
         
         <a
@@ -71,6 +72,19 @@ export default function Home() {
             <span className="text-sm text-cyber-muted mb-2 block">Frontend</span>
             <div className="flex flex-wrap gap-2">
               {SKILLS_FRONTEND.map((s) => (
+                <span
+                  key={s}
+                  className="px-3 py-1.5 rounded-lg bg-cyber-card border border-cyber-border text-slate-300 font-medium"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <span className="text-sm text-cyber-muted mb-2 block">Backend</span>
+            <div className="flex flex-wrap gap-2">
+              {SKILLS_BACKEND.map((s) => (
                 <span
                   key={s}
                   className="px-3 py-1.5 rounded-lg bg-cyber-card border border-cyber-border text-slate-300 font-medium"
