@@ -37,6 +37,7 @@ export default function GalleryCarousel({ gallery }: GalleryCarouselProps) {
           }`}
         >
           <img
+          fetchPriority={index === 0 ? 'high' : 'auto'}
             src={imgErrors[index] ? PLACEHOLDER : current.src}
             alt={current.alt}
             className={
@@ -95,6 +96,7 @@ export default function GalleryCarousel({ gallery }: GalleryCarouselProps) {
                   src={imgErrors[i] ? PLACEHOLDER : img.src}
                   alt=""
                   className="w-full h-full object-cover"
+                  loading="lazy"
                   onError={() => setError(i)}
                 />
               </button>
@@ -196,6 +198,7 @@ function Lightbox({ gallery, index, imgErrors, setError, onClose, onPrev, onNext
           className={isLong
             ? "mx-auto w-[min(1100px,90vw)] h-auto block"
             : "max-w-[90vw] max-h-[90vh] object-contain block"}
+            fetchPriority="high"
           onError={() => setError(index)}
         />
       </div>

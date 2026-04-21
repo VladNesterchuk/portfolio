@@ -7,7 +7,7 @@ import { listVariants, itemVariants } from '../motion/animations'
 
 const BASE = import.meta.env.BASE_URL
 const SKILLS_FRONTEND = ['HTML5', 'CSS3',  'Tailwind CSS' , 'JavaScript (ES6+, DOM)', 'React' , 'TypeScript (basic)',]
-const SKILLS_BACKEND = ['PHP', 'MySQL', 'REST API', 'API Integration',]
+const SKILLS_BACKEND = ['PHP', 'MySQL', 'API Integration',]
 const SKILLS_TOOLS = ['WordPress', 'Adobe Photoshop', 'Figma' , 'Git / GitHub', 'Cursor AI']
 
 const ALL_TECH = Array.from(new Set(projects.flatMap((p) => p.tech))).sort()
